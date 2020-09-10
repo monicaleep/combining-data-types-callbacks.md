@@ -71,8 +71,53 @@ foo();
 const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0]
 const panagram = ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog']
 
-//EVERY
+
+
+//Every
 //Determine if every number is greater than or equal to 0
-nums.every(num=>num>0)
+nums.every(num=>num>=0) //true
 //determine if every word shorter than 8 characters
-panagram.every(word=>word.length<8)
+panagram.every(word=>word.length<8) //true
+
+//Filter
+//filter the array for numbers less than 4
+nums.filter(num=>num<4) //[1,2,3,0]
+//filter words that have an even length
+panagram.filter(word=>word.length%2===0) // [over,lazy]
+
+// Find
+// Find the first value divisible by 5
+nums.find(num=>num%5===0) // 5
+// find the first word that is longer than 5 characters
+panagram.find(word=>word.length>5) //nothing
+
+// Find Index
+// find the index of the first number that is divisible by 3
+nums.findIndex(num=>num%3===0) // 2, nums[2] is 3
+// find the index of the first word that is less than 2 characters long
+nums.findIndex(word=>word.length<2) // -1
+
+// For Each
+// console.log each value of the nums array multiplied by 3
+nums.forEach(num=>console.log(num*3))
+// console.log each word with an exclamation point at the end of it
+panagram.forEach(word=>console.log(word+"!"))
+
+// Map
+// make a new array of each number multiplied by 100
+const newNums = nums.map(num=>num*100)
+console.log(newNums)
+// make a new array of all the words in all uppercase
+const loudly = panagram.map(word=>word.toUpperCase());
+console.log(loudly)
+
+// Some
+// Find out if some numbers are divisible by 7
+nums.some(num=>num%7===0) //true
+// Find out if some words have the letter a in them
+panagram.some(word=>word.includes('a')) //true
+
+
+// ============================================
+// Hungry for more?
+// ============================================

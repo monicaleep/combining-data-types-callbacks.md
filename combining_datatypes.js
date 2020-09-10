@@ -103,8 +103,7 @@ const vendingMachine = {
             {name: 'granola bar',
             price: 1} ],
   vend : function(num){
-    // Are we supposed to be using the this keyword or is there some other way??
-    return this.snacks[num]
+    return vendingMachine.snacks[num]
   }
 };
 
