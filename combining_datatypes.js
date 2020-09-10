@@ -86,3 +86,26 @@ const powerButton = () => {
   }
 }
 powerButton()();
+
+
+//a vending machine is an object
+// it has an array of snacks (make 3 snacks)
+// snacks are objects that have a name and a price
+// a vending machine has a function vend that allows user to enter the array position (a number) of the snack and then that snack will be returned
+// Be able to call vendingMachine.vend() with a valid integer to return a snack
+
+const vendingMachine = {
+  snacks : [{name:'chips',
+            price: 2
+            },
+            {name: 'cookies',
+            price: 1},
+            {name: 'granola bar',
+            price: 1} ],
+  vend : function(num){
+    // Are we supposed to be using the this keyword or is there some other way??
+    return this.snacks[num]
+  }
+};
+
+vendingMachine.vend(2)
