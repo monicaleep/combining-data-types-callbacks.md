@@ -1,3 +1,7 @@
+// =======================================
+// Combine objects, arrays, and functions
+// =======================================
+
 // 1. Create an object, called crayonBox, that has a property that is an array. The array should have the names of some crayons. Log one of the elements of that array.
 const crayonBox = {
   colors : ['red','chartreuse','indigo','violet']
@@ -37,11 +41,48 @@ const receipt = [
   }
 ]
 
-console.log(receipt[2].name)
+console.log(receipt[2].name);
 
 // 4. Create an array called apartmentBuilding that has an array as one of its elements, the inner array should be the names of the tenants. Log one of the elements of the inner array.
 
 const apartmentBuilding =['100 Wall St',
                           ['Jane Doe', 'Boris Shah','Alaska Shah']
                         ];
-console.log(apartmentBuilding[1][1])
+console.log(apartmentBuilding[1][1]);
+
+
+// =======================================
+// Combine objects, arrays, and functions more than one level deep
+// =======================================
+
+// 1. Create a function knit that returns an object that has the following kinds of properties item: scarf, size : 6ft etc. Log a value of that object (hint: call the function and then call a property on the return value).
+
+const knit = () => {
+  return {
+    item: 'blanket',
+    material: 'wool',
+    size: '6 square feet'
+  }
+};
+console.log(knit().size);
+
+
+// 2. Create a function crayonSelector that returns an object that has an array (you can reuse your crayonBox object). Log one of the elements of that array.
+
+const crayonSelector = () => {
+  return {
+    colors : ['red','chartreuse','indigo','violet']
+  }
+};
+
+console.log(crayonSelector().colors[1]);
+
+
+// 3. Create a function powerButton that returns a function called options - options should console.log a simple message like select a song. Call that inner function
+
+const powerButton = () => {
+  return options = () => {
+    console.log("select a song");
+  }
+}
+powerButton()();
