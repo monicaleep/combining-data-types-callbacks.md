@@ -121,3 +121,40 @@ panagram.some(word=>word.includes('a')) //true
 // ============================================
 // Hungry for more?
 // ============================================
+// Reduce
+// Add all the numbers in the array together using the reduce method
+nums.reduce((acc,cur)=>acc+cur) // 55
+
+// concatenate all the words using reduce
+panagram.reduce((acc,cur)=>acc+cur) // Thequickbrownfoxjumpsoverthelazydog
+
+
+// Sort
+// Try to sort without any arguments, do you get what you'd expect with the numbers array?
+nums.sort() // [0,1,10,2,3,4,5,6,7,8,9] no, it must convert to string before sorting
+// Try to sort without any arguments, do you get what you'd expect with the words array?
+panagram.sort() // No , the capital lettered "The" comes at the beginning!
+// Sort the numbers in ascending order
+nums.sort((a,b)=>a-b)
+// Sort the numbers in descending order
+nums.sort((a,b)=>b-a)
+// Sort the words in ascending order
+panagram.sort((a,b)=>{
+  let first = a.toUpperCase();
+  let second = b.toUpperCase();
+  if (first < second){
+    return -1
+  } else {
+    return 1
+  }
+})
+// Sort the words in descending order
+panagram.sort((a,b)=>{
+  let first = a.toUpperCase();
+  let second = b.toUpperCase();
+  if (first < second){
+    return 1
+  } else {
+    return -1
+  }
+})
