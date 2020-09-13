@@ -26,15 +26,16 @@ const calculate = (num1, num2, operates) => {
 
 
 // Call calculate 4 times, each time using one of the operation functions you wrote
-calculate(3, 4, add);
-calculate(10, 8, subtract);
-calculate(7, 8, multiply);
-calculate(99, 3, divide);
+calculate(3, 4, add);  // 7
+calculate(10, 8, subtract);  // 2
+calculate(7, 8, multiply); // 56
+calculate(99, 3, divide); // 33
 
 
 
 // Clean up this code, so that it works and has function definitions in the correct place
-// Need to move the function call below the function definition
+// Need to move the function call below the function definition/declaration
+
 const bar = () => {
   console.log('bar here');
 }
@@ -130,14 +131,19 @@ panagram.reduce((acc, cur) => acc + cur) // Thequickbrownfoxjumpsoverthelazydog
 
 
 // Sort
+
 // Try to sort without any arguments, do you get what you'd expect with the numbers array?
 nums.sort() // [0,1,10,2,3,4,5,6,7,8,9] no, it must convert to string before sorting
+
 // Try to sort without any arguments, do you get what you'd expect with the words array?
 panagram.sort() // No , the capital lettered "The" comes at the beginning!
+
 // Sort the numbers in ascending order
 nums.sort((a, b) => a - b)
+
 // Sort the numbers in descending order
 nums.sort((a, b) => b - a)
+
 // Sort the words in ascending order
 panagram.sort((a, b) => {
   let first = a.toUpperCase();
@@ -148,6 +154,7 @@ panagram.sort((a, b) => {
     return 1
   }
 })
+
 // Sort the words in descending order
 panagram.sort((a, b) => {
   let first = a.toUpperCase();
@@ -174,7 +181,7 @@ function isPanagram(array) {
     return (array.join(" ").toLowerCase().includes(letter))
   })
 }
-//;
+
 isPanagram(panagram) // true
 isPanagram(['a']) // false
 isPanagram(['abcdefghijklmnopqrstuvxyz']) // false (I removed the 'w')
