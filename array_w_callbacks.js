@@ -174,8 +174,9 @@ panagram.sort((a, b) => {
 
 // function to check if an array of words is a panagram => contains every letter in the alphabet;
 function isPanagram(array) {
+  // define the alphabet as a string of all lowercase letters
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  // turn alphabet into an array and use the every function to check if every letter in alphabet is in panagram;
+  // turn alphabet into an array and use the every function to check if every letter in alphabet is in the provided array;
   return alphabet.split("").every(letter => {
     // return true if the provided array includes the letter
     return (array.join(" ").toLowerCase().includes(letter))
